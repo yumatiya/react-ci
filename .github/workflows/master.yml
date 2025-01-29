@@ -6,7 +6,7 @@ on:
            - main
            - master
 
-Jobs:
+run-Jobs:
    build-and-test:
           runs-on: ubantu-lstest
 
