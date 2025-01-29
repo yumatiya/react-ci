@@ -1,0 +1,27 @@
+Name: "sample react ci pipeline/workflow"
+
+on: 
+    push:
+        branches:
+           - main
+           - master
+
+Jobs:
+   build-and-test:
+          runs-on: ubantu-lstest
+
+          steps:
+                - Name: " setup node js"
+                   uses: actions/setup-node@v4
+                   with:
+                   node-version: "21"
+
+                  - Name: "check node version"
+                     run: node --version
+
+                  - Name:  "clone the repository"
+                  uses: actions/checkout@v2
+
+                  - name: "install dependencies"
+                    run: npm install
+                    
